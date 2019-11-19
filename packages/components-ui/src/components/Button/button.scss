@@ -1,0 +1,109 @@
+@import '../../styles/variables.scss';
+
+:host([disabled]) {
+  pointer-events: none;
+}
+
+.ds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $btn-padding-y $btn-padding-x;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  line-height: $btn-line-height;
+  text-transform: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: $btn-color-black;
+  background-color: transparent;
+  transition: 0.25s;
+  text-decoration: none;
+  outline: 0;
+  min-width: 64px;
+  min-height: 24px;
+
+  color: $btn-color;
+  border-color: $btn-active-color;
+
+  &:hover {
+    color: $color-white;
+    background-color: $btn-active-color;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+
+  &--extra-small {
+    padding: 4px;
+    font-size: 16px;
+  }
+
+  &--small {
+    padding: 8px;
+    font-size: 20px;
+  }
+
+  &--medium {
+    padding: 12px;
+    font-size: 24px;
+  }
+
+  &--large {
+    padding: 16px;
+    font-size: 32px;
+  }
+
+  &--extra-large {
+    padding: 24px;
+    font-size: 40px;
+  }
+}
+
+// Color variants
+.ds-button {
+  @each $name, $background-color, $color, $hover-color,
+    $active-color in $btn-variants-list
+  {
+    &--#{$name} {
+      background-color: $background-color;
+      color: $color;
+      border-color: $background-color;
+      @if ($hover-color) {
+        &:hover {
+          color: $color;
+          border-color: $hover-color;
+          background-color: $hover-color;
+        }
+      } @else {
+        &:hover {
+          color: $color;
+          border-color: darken($background-color, 7%);
+          background-color: darken($background-color, 7%);
+        }
+      }
+      @if ($active-color) {
+        &:active {
+          color: $color;
+          border-color: $active-color;
+          background-color: $active-color;
+        }
+      } @else {
+        &:active {
+          color: $color;
+          border-color: darken($background-color, 13%);
+          background-color: darken($background-color, 13%);
+        }
+      }
+    }
+  }
+}

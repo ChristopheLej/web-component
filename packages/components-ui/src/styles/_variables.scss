@@ -1,0 +1,40 @@
+$spacing-rg: 12px;
+$spacing-lg: 24px;
+
+$color-primary-default: #4ea9dc;
+$color-primary-hover: #0049b0;
+$color-primary-active: #04347c;
+
+$color-secondary-default: #0049b0;
+$color-secondary-hover: #04347c;
+$color-secondary-active: #000287;
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-border-primary-default: #4ea9dc;
+
+// Buttons
+$btn-padding-y: $spacing-rg !default;
+$btn-padding-x: $spacing-lg !default;
+$btn-line-height: 1 !default;
+$btn-color-black: $color-black;
+$btn-active-color: $color-border-primary-default;
+$btn-color: $color-primary-default;
+// Button color variants
+$btn-variants-list: (
+  (
+    primary,
+    $color-primary-default,
+    $color-white,
+    $color-primary-hover,
+    $color-primary-active
+  ),
+  (
+    secondary,
+    $color-secondary-default,
+    $color-white,
+    $color-secondary-hover,
+    $color-secondary-active
+  )
+) !default;

@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>Welcome to {{ title }}!</h1>
+  <cmp-button (click)="onClick()">Default button</cmp-button>
+  <cmp-button primary (click)="onClickPrimary()">
+    Primary button
+  </cmp-button>
+  <cmp-button secondary (click)="onClickSecondary()">
+    Secondary button
+  </cmp-button>
+</div>
+
+<router-outlet></router-outlet>
